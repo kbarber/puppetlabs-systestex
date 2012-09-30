@@ -30,6 +30,9 @@ GEM
     jruby-pageant (1.1.1)
     json (1.7.5)
     libxml-ruby (2.3.3)
+    metaclass (0.0.1)
+    mocha (0.12.6)
+      metaclass (~> 0.0.1)
     net-scp (1.0.4)
       net-ssh (>= 1.99.1)
     net-ssh (2.6.0)
@@ -58,6 +61,7 @@ PLATFORMS
 
 DEPENDENCIES
   facter (= 1.6.12)
+  mocha
   puppet (= 2.7.19)
   puppet_acceptance!
   rake (~> 0.9)

@@ -1,13 +1,12 @@
-describe 'do something' do
-  it 'foo' do
-  agents.each do |host|
-    #it "test stuff on host #{host}" do
-      on host, 'echo foo' do |out,err|
-        stdout.should =~ /foo/
-      end
-    #end
-  end
-  end
+require 'spec_helper'
 
-  its(:stdout) { should contain(/foo/) }
+describe 'foo echo test' do
+  agents.each do |host|
+    context "test stuff on host #{host}" do
+      on host, 'echo foo'
+      its(:stdout) { should =~ /foo/ }
+      its(:stderr) { should be_empty }
+      its(:code) { should be 0 }
+    end
+  end
 end
